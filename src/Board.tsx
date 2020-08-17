@@ -9,6 +9,13 @@ export const Board = () => {
 
     const handleClickEvent = (i: number) => {
         const newSquares = [...squares];
+
+        const winnerDeclared = !!calculateWinner(newSquares);
+        const isSquareFilled = !!newSquares[i];
+        if (winnerDeclared || isSquareFilled) {
+            return;
+        }
+
         newSquares[i] = xIsNext ? 'X' : 'O';
         setSquares(newSquares);
         setXIsNext(!xIsNext);
