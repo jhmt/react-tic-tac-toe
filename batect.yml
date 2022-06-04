@@ -1,0 +1,18 @@
+containers:
+  node:
+    image: node:18-alpine
+    ports:
+      - local: 15005
+        container: 3000
+    volumes:
+      - local: .
+        container: /code
+        options: cached
+    working_directory: /code
+
+tasks:
+  run-game:
+    description: running game
+    run:
+      container: node
+      command: "(npm run start&)"
