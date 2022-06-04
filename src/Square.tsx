@@ -2,6 +2,7 @@ import React from 'react';
 import './Square.css';
 
 interface SquareProps {
+    children: [];
     value: string;
     onClickEvent: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
